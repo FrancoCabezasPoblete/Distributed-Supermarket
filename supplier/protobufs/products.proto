@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message SendProductRequest{
+    int32 id_producto = 1;
+    string nombre = 2;
+    int32 cantidad_disponible = 3;
+}
+
+message SendProductResponse{
+    int32 id_producto = 1;
+    int32 cantidad_disponible = 2;
+}
+
+service Products {
+    rpc SendProduct(SendProductRequest) returns (SendProductResponse);
+}
